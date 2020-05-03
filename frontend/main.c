@@ -55,6 +55,7 @@ char   *strchr(), *strrchr();
 #endif
 
 #ifdef __OS2__
+#define INCL_DOS
 #include <os2.h>
 #define PRTYC_IDLE 1
 #define PRTYC_REGULAR 2
@@ -201,7 +202,7 @@ setProcessPriority(int Priority)
 
 #if defined(__OS2__)
 /* OS/2 priority functions */
-static void
+void
 setProcessPriority(int Priority)
 {
     int     rc;
